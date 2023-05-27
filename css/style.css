@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: radial-gradient(color1, color2, color3);
+}
+/* nav bar code start*/
+
+nav {
+ font-family: sans-serif;
+  background: #222;
+  padding: 10px 20px;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.logo a:hover {
+  text-decoration: none;
+}
+.menu li {
+  font-size: 25px;
+  padding: 20px 5px;
+  white-space: nowrap;
+  text-decoration: white;
+}
+.logo a,
+.toggle a {
+  font-size: 30px;
+}
+.button.secondary {
+  border-bottom: 1px #f1efef solid;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  order: 1;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+.item.active {
+  display: block;
+}
+
+/* Navbar Toggle */
+.toggle {
+  cursor:pointer;
+}
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+.bars:before,
+.bars:after {
+  background: #999;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.bars:before {
+  top: 5px;
+}
+.bars:after {
+  top: -5px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 468px) {
+  .menu {
+      justify-content: center;
+  }
+
+  .logo {
+      flex: 1;
+  }
+
+  .item.button {
+      width: auto;
+      order: 1;
+      display: block;
+  }
+  .toggle {
+      order: 2;
+  }
+  .button.secondary {
+      border: 0;
+  }
+  .button a {
+      padding: 7.5px 15px;
+      background: rgb(16, 231, 231);
+      border: 1px #18f8f8 solid;
+      border-radius:50em;
+  }
+  .button.secondary a {
+      background: transparent;    
+  }
+  .button a:hover {
+      text-decoration: none;
+      transition:all .25s;
+  }
+  .button:not(.secondary) a:hover {
+      background: #006d6d;
+      border-color: #005959;
+  }
+  .button.secondary a:hover {
+      color: #ddd;
+  } 
+}
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+  .item {
+      display: block;
+      width: auto;
+  }
+  .toggle {
+      display: none;
+  }
+  .logo {
+      order: 0;
+  }
+  .item {
+      order: 1;
+  }
+  .button {
+      order: 2;
+  }
+  .menu li {
+      padding: 15px 10px;
+  }
+  .menu li.button {
+      padding-right: 0;
+  }
+}
+
+
+/* nav bar code end*/
+
+/* image slide css start */
+.img-animation .container {
+    width: auto;
+    height :auto;
+    background: #302d2d;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.swiper
+{
+    width: 90%;
+    height: fit-content;
+}
+.swiper-slide img{
+
+    width:100%;
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next {
+  color:#fff ;
+}
+.swiper .swiper-pagination-bullet-active {
+  border:2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+  
+
+}
+/* image slide css end */
+
+
+.box {
+  clear: both;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+  align-items: center; /* Add this line */
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar label {
+  font-weight: bold;
+}
+
+.sidebar select,
+.sidebar input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.sidebar button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #45a049;
+}
+

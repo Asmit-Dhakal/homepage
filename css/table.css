@@ -1,0 +1,107 @@
+.table{
+  display: flex;
+  border: 2px solid green;
+  justify-content: space-evenly;
+
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px;
+    font-size: 1.2em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 50px rgba(236, 9, 9, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #62d415;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.content3
+ {
+ background-color: lightgrey;
+ position: absolute;
+ right: 10%;
+width: 300px;
+border: 15px solid green;
+padding: 50px;
+margin: 20px;
+}
+.content
+{
+position: relative;
+}
+.content2
+{
+ position: absolute;
+  left: 10%;;
+}
+/*--------------book--------*/
+
+  /*--------------book--------*/
+
+  .table {
+    display: flex;
+  }
+  .table .styled-table{
+    border: 2px solid coral;
+    width: 50%;
+  
+  }
+  .rules {
+    width: 90%;
+    border: 3px solid red;
+    height: auto;
+    margin-right: 30px;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 20px;
+      font-family: sans-serif;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(202, 20, 20, 0.15);
+      padding: 20px;
+    }
+  .flex-container
+  {
+    margin: 12px;
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    border:2px solid green;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+  }
+  .flex-item {
+    background-color:white;
+    width: 600px;
+    height: auto;
+    border: 2PX solid black;
+    margin: 20px;
+  }
+
+	
+
+
+  

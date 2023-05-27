@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cable Car Booking System</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/table.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/script.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="interactive-map.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <!--nav bar start-->
+
+    <div>
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="#">Logo</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                </li>
+                <li class="item button"><a href="#">Log In</a></li>
+                <li class="item button secondary"><a href="#">Sign Up</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+    </div>
+
+<!--nav bar end -->
+<!-- image animation start-->
+<div class ="img-animation">
+<div class="container" >
+  <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="images/1.png"></div>
+    <div class="swiper-slide"><img src="images/2.png"></div>
+    <div class="swiper-slide"><img src="images/3.png"></div>
+    <div class="swiper-slide"><img src="images/4.png"></div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+  autoplay:{
+    delay:3000,
+    disableOnInteraction:false,
+  },
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</div>
+<!-- image animation end-->
+<div class="flex-container">
+     <div class="flex-item">
+    <table class="styled-table">
+<thead>
+    <tr>
+    <th> Rates </th>
+    <th> One Way </th>
+    <th> Two Way </th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr>
+    <td> Nepali  </td>
+    <td> Rs.410  </td>
+    <td> Rs.700  </td>
+    </tr>
+    
+    <tr>
+    <td> Child  </td>
+    <td> Rs.245 </td>
+    <td> Rs.420 </td>
+    </tr>
+    
+    <tr>
+    <td> Student  </td>
+    <td>   Rs.305 </td>
+    <td>   Rs.525 </td>
+    </tr>
+    
+    <tr>
+    <td> Senior Citizen </td>
+    <td>    Rs.285      </td>
+    <td>    Rs.490      </td>
+    </tr>
+    <tr>
+    <td> Differently Abled </td>
+    <td>  Rs.205           </td>
+    <td>  Rs.350           </td>
+    </tr>
+    <tr>
+    <td> Foreigner </td>
+    <td>  Rs.600   </td>
+    <td>   Rs.1000 </td>
+    </tr>
+    
+    <tr>
+    <td> Child Foreigner</td>
+    <td> Rs.400         </td>
+    <td> Rs.750        </td>
+    </tr>
+    
+    <tr>
+    <td> Goods Per Kg </td>
+    <td> Rs.17        </td>
+    <td> Rs.35        </td>
+    </tr>
+    
+    <tr>
+    <td> Goat    </td>
+    <td> Rs.250  </td>
+    <td> Rs.450  </td>
+    </tr>
+    </tbody>
+       </table>
+  </div>
+  <div class="flex-item">
+    <style scoped>
+      ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          color: #333;
+      }
+  
+      h3 {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+      }
+  
+      li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 15px;
+          opacity: 0;
+          animation: fadeIn 1s ease-in-out forwards;
+          font-style: italic;
+          font-weight: bold;
+      }
+  
+      li:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #333;
+          opacity: 0;
+          animation: scaleIn 1s ease-in-out forwards;
+      }
+  
+      li:after {
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background-color: #333;
+          opacity: 0;
+          animation: fadeIn 1s ease-in-out 0.5s forwards;
+      }
+  
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+  
+      @keyframes scaleIn {
+          from {
+              transform: scale(0);
+              opacity: 0;
+          }
+          to {
+              transform: scale(1);
+              opacity: 1;
+          }
+      }
+  </style>
+  
+  <ul>
+      <h3>Rules</h3>
+      <li>Child is categorized by their height, children above 3ft and up to 4ft height qualify for a child ticket.</li>
+      <li>60 years and above qualifies for a senior citizen ticket.</li>
+      <li>Senior citizen and student ticket require proof or ID card.</li>
+      <li>15 kg baggage allowed is given free of charge; baggage exceeding the limit will be charged @NPR 17 per kg.</li>
+      <li>If in a group, the total number of people is 5, then 1 ticket will be free.</li>
+      <li>Rates are subject to change without prior notice.</li>
+  </ul>
+</div>
+  </div>
+  <div>
+  <div class="book">
+      <div class="input grid">
+        <div class="box">
+          <label for="nation">Country</label>
+          <select name="nation">
+            <option value="nepal">Nepal</option>
+            <option value="foreign">Foreign</option>
+          </select>
+        </div>
+        <div class="box">
+          <label>Check-in:</label>
+          <input type="date" placeholder="Check-in-Date">
+        </div>
+        <div class="box">
+          <label>Number of People</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Children:</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Student:</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Senior Citizen:</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Differently Abled</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Weight of goods per kg</label> <br>
+          <input type="number" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <button type="submit">Confirm</button>
+        </div>
+    </div>
+  </div>
+  <style scoped>
+    .flex {
+      display: flex;
+    }
+  
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+    }
+  
+    .book {
+      width:auto;
+      height:auto;
+      color: rgb(17, 2, 2);
+      margin-top: 20px;
+    }
+  
+    .book .input {
+      background: #242e5a;
+      padding: 20px 20px 40px 20px;
+    }
+  
+    .book .search {
+      background: #14aeeb;
+      padding: 20px;
+    }
+  
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      outline: none;
+      background: #263760;
+      margin-top: 20px;
+      color: rgb(235, 218, 218);
+    }
+  
+    ::placeholder {
+      color: rgb(245, 235, 235);
+    }
+  </style>
+  </div>
+  <div>
+    
+  <div >
+    <style scoped>
+    
+      img,
+      figure {
+        max-width: 100%;
+      }
+  
+      button,
+      .btn {
+        -webkit-transition: background-color 250ms cubic-bezier(0.55, 0, 0.1, 1);
+        transition: background-color 250ms cubic-bezier(0.55, 0, 0.1, 1);
+      }
+  
+      .slick-slide img {
+        display: block;
+      }
+  
+      .text-left {
+        text-align: left !important;
+      }
+  
+      .list-inline,
+      .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+      }
+  
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+      ol,
+      ul {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+  
+      .ct-map__section .container {
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+  
+      .ct-u-padding-bottom-40 {
+        padding-bottom: 40px;
+        padding-top: 40px;
+      }
+  
+      .ct-map {
+        position: relative;
+        width: 562px;
+        -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+        transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+        margin-top: 55px;
+      }
+  
+      .ct-city.stone {
+        top: -10%;
+        left: 42%;
+      }
+  
+      .ct-popup {
+        background: #1aa6e2;
+        border-radius: 50%;
+        width: 334px;
+        height: 334px;
+        text-align: center;
+        color: white;
+        padding: 40px 40px 20px;
+        overflow: hidden;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 12%;
+        -ms-transform-origin: 12%;
+        transform-origin: 12%;
+        opacity: 0;
+        -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+        transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+      }
+  
+      .ct-popup>.ct-popup__inner,
+      .ct-popup>.inner {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+      }
+  
+      .ct-popup__name {
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        text-transform: uppercase;
+        padding-bottom: 14px;
+        display: block;
+      }
+  
+      .ct-popup__content {
+        font-size: 16px;
+        font-family: 'Helvetica', sans-serif;
+      }
+  
+      .ct-city {
+        position: absolute;
+        width: 334px;
+        height: 334px;
+      }
+  
+      .ct-city__button .ct-close {
+        display: none;
+      }
+  
+      .ct-city.active .ct-city__button .ct-close {
+        display: block;
+      }
+  
+      .ct-city.active .ct-city__button .ct-plus,
+      .ct-city.active .ct-city__button .ct-city__name {
+        display: none;
+      }
+  
+      .ct-city__name {
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: absolute;
+        width: 240px;
+        left: 50%;
+        margin-left: -120px;
+        margin-top: 3px;
+        font-family: 'Raleway', sans-serif;
+        color: #111f1d;
+        font-weight: 900;
+      }
+  
+      .ct-city.orlando {
+        top: 43%;
+        left: 40%;
+      }
+  
+      .ct-city {
+        position: absolute;
+        width: 334px;
+        height: 334px;
+      }
+  
+      .ct-city__button {
+        background: none;
+        border: none;
+        z-index: 30;
+        position: absolute;
+        top: 46%;
+        left: 12px;
+        outline: none;
+      }
+  
+      .ct-city.orlando2 {
+        top: 24%;
+      }
+  
+      .ct-city.orlando2 {
+        top: 15%;
+        left: 15%;
+      }
+  
+      .ct-content {
+        width: 100%;
+        max-width: 537px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .ct-map__section .container .ct-section-header {
+        padding-bottom: 10px;
+      }
+  
+      .ct-content .ct-section-header {
+        margin-top: 0;
+        padding-top: 83px;
+        letter-spacing: 0.35px;
+      }
+  
+      .ct-section-header {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 900;
+        color: #101f1d;
+        font-size: 35px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 45px;
+        letter-spacing: 1.25px;
+        margin-bottom: 5px;
+      }
+  
+      .ct-content .ct-section-header small {
+        margin-bottom: -4px;
+        padding-top: 12px;
+        letter-spacing: 0px;
+      }
+  
+      .ct-section-header small {
+        color: #303030;
+        font-size: 22px;
+        display: block;
+        font-weight: 600;
+        padding-top: 10px;
+        margin-bottom: -12px;
+        text-transform: none;
+      }
+  
+      .ct-city.active {
+        z-index: 30;
+      }
+  
+      .ct-city.active .ct-popup {
+        opacity: 1;
+        display: inline-table;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        position: relative;
+        z-index: 20;
+      }
+  
+      .ct-content li {
+        font-weight: 700;
+        font-size: 17px;
+        padding-left: 4px;
+      }
+  
+      .ct-content li:before {
+        content: '\f0da';
+        font-family: 'FontAwesome';
+        color: #f59331;
+        padding-right: 13px;
+      }
+  
+      .ct-content .btn {
+        margin-top: 30px;
+      }
+  
+      .btn.btn-motive {
+        background: #f59331;
+        color: white;
+      }
+  
+      .btn {
+        font-size: 15px;
+        padding: 22px 46px 18px;
+        line-height: 1;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 0;
+        position: relative;
+        letter-spacing: 0.3px;
+      }
+  
+      @media (min-width: 1399px) {
+        .container {
+          width: 1334px;
+        }
+  
+        .ct-map__image {
+          max-width: none;
+          width: 562px;
+          margin-top: -3px;
+          position: relative;
+          left: 11px;
+        }
+      }
+  
+      @media only screen and (min-width: 1024px) {
+        .ct-content .btn {
+          margin-top: 55px;
+        }
+  
+        .ct-section-header {
+          padding-top: 77px;
+        }
+  
+        .ct-map__section .container {
+          padding-bottom: 71px;
+        }
+      }
+  
+      @media only screen and (min-width: 768px) {
+        .ct-popup__content {
+          position: relative;
+          text-align: center;
+          letter-spacing: 0.15px;
+          line-height: 1.25;
+        }
+  
+        .ct-city__name {
+          font-size: 18px;
+        }
+      }
+  
+      @media only screen and (max-width: 767px) {
+        .ct-map {
+          margin-top: 40px;
+          width: 100%;
+        }
+  
+        .ct-city.active {
+          width: 100%;
+          height: 100%;
+          top: 0 !important;
+          left: 0 !important;
+          margin: 0;
+          z-index: 40;
+        }
+  
+        .ct-city.active .ct-popup {
+          width: 100%;
+          height: 100%;
+        }
+      }
+  
+      @media only screen and (max-width: 479px) {
+        .ct-city.stone {
+          top: -30%;
+          left: 42%;
+        }
+  
+        .ct-city.orlando2 {
+          top: -5%;
+          left: 15%;
+        }
+  
+        .ct-city.orlando {
+          top: 23%;
+          left: 40%;
+        }
+      }
+  
+      @media (max-height: 766px) {
+        .ct-section-header {
+          padding-top: 35px;
+        }
+  
+        .ct-map__section .container {
+          padding-bottom: 0px;
+        }
+      }
+    </style>
+    <div class="row ct-u-padding-bottom-40">
+      <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5">
+        <div class="ct-map">
+          <img alt="Map" class="ct-map__image" src="images/Untitled design.png">
+          <div class="ct-city stone">
+            <button class="ct-city__button" type="button" tabindex="0"><img alt="Map Open Icon" class="ct-plus"
+                src="images/map-plus.png" data-pin-nopin="true"><img alt="Map Close Icon"
+                class="ct-close" src="images/map-close.png" data-pin-nopin="true"><span
+                class="ct-city__name">Cable Car Counter</span></button>
+            <div class="ct-popup">
+              <div class="inner">
+                <span class="ct-popup__name">Counter</span>
+                <p class="ct-popup__content">
+                  Counter is situated at this position
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ct-city orlando2">
+            <button class="ct-city__button" type="button" tabindex="0"><img alt="Map Open Icon" class="ct-plus"
+                src="images/map-plus.png" data-pin-nopin="true"><img alt="Map Close Icon"
+                class="ct-close" src="images/map-close.png"><span
+                class="ct-city__name">Cable Car</span></button>
+            <div class="ct-popup">
+              <div class="inner">
+                <span class="ct-popup__name">Cable Car </span>
+                <p class="ct-popup__content">
+                  Traveling through cable car from this location
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7">
+        <div class="ct-content">
+          <h2 class="ct-section-header text-left">
+            Our Locations<small>Near the pokhara valley</small>
+          </h2>
+          <br>
+          <br>
+          <ul class="list-unstyled">
+            <li>--Meet with a help Desk at the counter is available
+            </li>
+            <li> --Free parking vehicle ousidie the counter
+            </li>
+
+          </ul>
+          <a class="btn btn-motive" href="#" tabindex="0">Call US</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script>
+  $(document).ready(function() {
+    var city, map;
+    map = $('.ct-map');
+    city = map.find('.ct-city');
+    city.each(function() {
+      var button, that;
+      that = $(this);
+      button = that.find('.ct-city__button');
+      return button.on('click', function() {
+        city.not(that).removeClass('active');
+        if (that.hasClass('active')) {
+          that.removeClass('active');
+          return map.removeClass('popup-open');
+        } else {
+          that.addClass('active');
+          return map.addClass('popup-open');
+        }
+      });
+    });
+  });
+</script>
+  </div>
+  <div class="footer">
+  <footer>
+    <div class="footer-content">
+      <style media="screen">
+  footer{
+    margin: 20px;
+    margin-right: 20px;
+      position:relative;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      height: auto;
+      width:auto;
+  
+      padding-top: 40px;
+      color: #fff;
+  }
+  .footer-content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer-content h3{
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      line-height: 3rem;
+  }
+  .footer-content p{
+      max-width: 500px;
+      margin: 10px auto;
+      line-height: 28px;
+      font-size: 14px;
+      color: #cacdd2;
+  }
+  .socials{
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0 3rem 0;
+  }
+  .socials li{
+      margin: 0 10px;
+  }
+  .socials a{
+      text-decoration: none;
+      color: #fff;
+      border: 1.1px solid white;
+      padding: 5px;
+  
+      border-radius: 50%;
+  
+  }
+  .socials a i{
+      font-size: 1.1rem;
+      width: 20px;
+  
+  
+      transition: color .4s ease;
+  
+  }
+  .socials a:hover i{
+      color: aqua;
+  }
+  
+  .footer-bottom{
+      background: #000;
+      width: auto;
+      padding: 20px;
+  padding-bottom: 40px;
+      text-align: center;
+  }
+  .footer-bottom p{
+  float: left;
+      font-size: 14px;
+      word-spacing: 2px;
+      text-transform: capitalize;
+  }
+  .footer-bottom p a{
+    color:#44bae8;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .footer-bottom span{
+      text-transform: uppercase;
+      opacity: .4;
+      font-weight: 200;
+  }
+  .footer-menu{
+    float: right;
+  
+  }
+  .footer-menu ul{
+    display: flex;
+  }
+  .footer-menu ul li{
+  padding-right: 10px;
+  display: block;
+  }
+  .footer-menu ul li a{
+    color: #cfd2d6;
+    text-decoration: none;
+  }
+  .footer-menu ul li a:hover{
+    color: #27bcda;
+  }
+  
+  @media (max-width:500px) {
+  .footer-menu ul{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  }
+      </style>
+        <h3>Cable Car Booking</h3>
+        <p> It is a website for cable car booking.Here we can book ticket of Cable car</p>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+           <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy; <a href="#">Cable Car Booking</a>  </p>
+                <div class="footer-menu">
+                  <ul class="f-menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Blog</a></li>
+                  </ul>
+                </div>
+    </div>
+
+</footer>
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
