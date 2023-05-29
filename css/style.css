@@ -7,9 +7,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-html {
-  height: 100%;
-}
 
 nav {
   background-color: rgb(7, 6, 6);
@@ -52,15 +49,15 @@ nav ul li a:hover {
 .img-animation .container {
     width: auto;
     height :auto;
-    background: #302d2d;
     display:flex;
     align-items: center;
     justify-content: center;
-
+    background-color: #08151c;
+    background-image: linear-gradient(135deg, #08151c 0%, #1727d6 50%, #370707 100%);
 }
 .swiper
 {
-    width: 90%;
+    width: 100%;
     height: fit-content;
 }
 .swiper-slide img{
@@ -69,10 +66,10 @@ nav ul li a:hover {
 }
 
 .swiper .swiper-button-prev, .swiper .swiper-button-next {
-  color:#fff ;
+  color:#f7f3f3 ;
 }
 .swiper .swiper-pagination-bullet-active {
-  border:2px solid #fff;
+ 
   padding: 5px;
   border-radius: 10px;
   
@@ -83,40 +80,15 @@ nav ul li a:hover {
 
 .box {
   clear: both;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: #c92929;
+  border: 1px solid #ddafaf;
   border-radius: 4px;
-  padding: 20px;
-  display: flex; /* Add this line */
+  padding: 10px;
+  display: auto flex; /* Add this line */
   justify-content: center; /* Add this line */
   align-items: center; /* Add this line */
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
-.sidebar label {
-  font-weight: bold;
-}
 
-.sidebar select,
-.sidebar input {
-  padding: 5px;
-  border: 1px solid #ccc;
-}
-
-.sidebar button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.sidebar button:hover {
-  background-color: #45a049;
-}
 
