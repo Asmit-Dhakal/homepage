@@ -205,17 +205,24 @@
           <input type="number" placeholder="0" min="0">
         </div>
         <div class="box">
+          <div id="button">
           <button type="submit">Confirm</button>
         </div>
+      </div>
     </div>
   </div>
   <style scoped>
-   
+   #button
+   {
+    margin-right:40px;
+    margin-top: 40px;
+    margin-left: 115px;
+   }
     .grid {
       display: grid;
       
       grid-template-columns: repeat(5, 1fr);
-      grid-gap: 13px;
+      grid-gap: 20px;
     }
   
     .book {
@@ -237,16 +244,29 @@
     input {
       width: 100%;
       padding: 12px;
-      border: 2px solid rgba(77, 7, 7, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
       outline: none;
-      background: #3f71e7;
-      margin-top: 18px;
+      background: #083192;
+      margin-top: 25px;
       color: rgb(236, 230, 230);
     }
   
     ::placeholder {
-      color: rgb(243, 237, 237);
+      color: rgb(0, 0, 0);
     }
+
+.box {
+  clear: both;
+  background-color: #f1efef;
+
+  border-radius: 4px;
+  padding: 1px;
+  display: auto flex; 
+  justify-content: center;  
+  align-items: center;
+  
+}
+
   </style>
   </div>
   <div>
@@ -682,8 +702,7 @@
     <div class="footer-content">
       <style media="screen">
   footer{
-    margin: 20px;
-    margin-right: 20px;
+   
       position:relative;
       bottom: 0;
       left: 0;
@@ -691,8 +710,6 @@
       background: #111;
       height: auto;
       width:auto;
-  
-      padding-top: 40px;
       color: #fff;
   }
   .footer-content{
@@ -709,7 +726,7 @@
       line-height: 3rem;
   }
   .footer-content p{
-      max-width: 500px;
+      max-width:auto;
       margin: 10px auto;
       line-height: 28px;
       font-size: 14px;
@@ -791,7 +808,7 @@
   @media (max-width:500px) {
   .footer-menu ul{
     display: flex;
-    margin-top: 10px;
+   
     margin-bottom: 20px;
   }
   }
