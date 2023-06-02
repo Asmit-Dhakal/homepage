@@ -18,6 +18,8 @@
   <link href="interactive-map.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
   <!--nav bar start-->
@@ -90,71 +92,111 @@
 <!-- image animation end-->
 
 <!--sumbit button code start  -->
-<div>
-  <div class="book">
-    <div class="input grid">
-      <div class="box">
-        <label for="nation">Country</label>
-        <select name="nation">
-          <option value="nepal">Nepal</option>
-          <option value="foreign">Foreign</option>
-        </select>
-      </div>
-      <div class="box">
-        <label>Check-in:</label>
-        <input type="date" placeholder="Check-in Date">
-      </div>
-      <div class="box">
-        <label>Number of People</label> <br>
-        <input type="number" placeholder="0" min="0" id="numPeople">
-      </div>
-      <div class="box">
-        <label>Children:</label> <br>
-        <input type="number" placeholder="0" min="0" id="numChildren">
-      </div>
-      <div class="box">
-        <label>Student:</label> <br>
-        <input type="number" placeholder="0" min="0" id="numStudents">
-      </div>
-      <div class="box">
-        <label>Senior Citizen:</label> <br>
-        <input type="number" placeholder="0" min="0" id="numSeniors">
-      </div>
-      <div class="box">
-        <label>Differently Abled</label> <br>
-        <input type="number" placeholder="0" min="0" id="numAbled">
-      </div>
-      <div class="box">
-        <label>Weight of goods per kg</label> <br>
-        <input type="number" placeholder="0" min="0" id="goodsWeight">
-      </div>
-      <div class="box">
-        <div id="button">
-          <button type="submit">Confirm</button>
+  <div>
+    <div class="book">
+      <div class="input grid">
+        <div class="box">
+          <label for="name">Enter your Name:</label>
+          <input type="text" id="name" name="name"><br><br>
+        </div>
+        <div class="box">
+          <label for="email">Enter your Email:</label>
+          <input type="text" id="email" name="email"><br><br>
+        </div>
+        <div class="box">
+          <label for="phone">Enter your Phone no:</label>
+          <input type="tel" id="phone" name="phone"><br><br>
+        </div>
+        <div class="box">
+          <label for="address">Enter your Address</label>
+          <input type="text" id="address" name="address"><br><br>
+        </div>
+        <div class="box">
+          <label for="country">Country</label>
+          <select name="country" id="country">
+            <option value="nepal">Nepal</option>
+            <option value="foreign">Foreign</option>
+          </select>
+        </div>
+        <div class="box">
+          <label>Check-in:</label>
+          <input type="date" id="checkin" placeholder="Check-in Date">
+        </div>
+        <div class="box">
+          <label>Number of People</label> <br>
+          <input type="number" id="numPeople" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Children:</label> <br>
+          <input type="number" id="numChildren" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Student:</label> <br>
+          <input type="number" id="numStudents" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Senior Citizen:</label> <br>
+          <input type="number" id="numSeniors" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Differently Abled</label> <br>
+          <input type="number" id="numAbled" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <label>Weight of goods per kg</label> <br>
+          <input type="number" id="goodsWeight" placeholder="0" min="0">
+        </div>
+        <div class="box">
+          <div id="button">
+            <button onclick="downloadPDF()">Submit</button>
+          </div>
         </div>
       </div>
     </div>
- 
+  </div>
 
-<script>
-  const numberInputs = document.querySelectorAll('input[type="number"]');
+  <script>
+    function downloadPDF() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+      var country = document.getElementById("country").value;
+      var checkin = document.getElementById("checkin").value;
+      var numPeople = document.getElementById("numPeople").value;
+      var numChildren = document.getElementById("numChildren").value;
+      var numStudents = document.getElementById("numStudents").value;
+      var numSeniors = document.getElementById("numSeniors").value;
+      var numAbled = document.getElementById("numAbled").value;
+      var goodsWeight = document.getElementById("goodsWeight").value;
 
-  numberInputs.forEach(input => {
-    input.addEventListener('input', () => {
-      if (input.value <=0) {
-        input.value =0;
-      }
-    });
+      var doc = new jsPDF();
+      doc.text(20, 20, "Name: " + name);
+      doc.text(20, 30, "Email: " + email);
+      doc.text(20, 40, "Phone: " + phone);
+      doc.text(20, 50, "Address: " + address);
+      doc.text(20, 60, "Country: " + country);
+      doc.text(20, 70, "Check-in: " + checkin);
+      doc.text(20, 80, "Number of People: " + numPeople);
+      doc.text(20, 90, "Number of Children: " + numChildren);
+      doc.text(20, 100, "Number of Students: " + numStudents);
+      doc.text(20, 110, "Number of Seniors: " + numSeniors);
+      doc.text(20, 120, "Number of Differently Abled: " + numAbled);
+      doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
+      doc.save("form.pdf");
+    };
+  
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+
+numberInputs.forEach(input => {
+  input.addEventListener('input', () => {
+    if (input.value <=0) {
+      input.value =0;
+    }
   });
-</script>
-  <style scoped>
+});
 
-
-  </style>
-  </div>
-  </div>
-
-
+  </script>
 
 <!--sumbit button code end  -->
 
@@ -350,13 +392,3 @@
 <!-- footer code end -->
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
