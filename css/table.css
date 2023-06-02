@@ -20,7 +20,7 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
-  height: auto
+  height: auto;
 }
 
 .table-container:hover,
@@ -81,7 +81,7 @@
 
 .rules h3 {
   color: #0d0668;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -90,7 +90,7 @@
   color: #000;
   margin-bottom: 10px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18.8px;
 }
 
 .rules li::before {
