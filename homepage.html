@@ -10,6 +10,7 @@
   <link href="css/location.css" rel="stylesheet" type="text/css" />
   <link href="css/book.css" rel="stylesheet" type="text/css" />
   <link href="css/footer.css" rel="stylesheet" type="text/css" />
+  <link href="css/nav.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/script.js"></script>
@@ -23,6 +24,7 @@
 </head>
 <body>
   <!--nav bar start-->
+  <div>
   <nav>
     <ul>
       <li>
@@ -36,8 +38,10 @@
       </li>
     </ul>
   </nav>
+</div>
 <!--nav bar end -->
 <!-- image animation start-->
+<div>
 <div class ="img-animation">
 <div class="container" >
   <!-- Slider main container -->
@@ -89,6 +93,7 @@
 });
 </script>
 </div>
+</div>
 <!-- image animation end-->
 
 <!--sumbit button code start  -->
@@ -105,7 +110,7 @@
         </div>
         <div class="box">
           <label for="phone">Enter your Phone no:</label>
-          <input type="tel" id="phone" name="phone"><br><br>
+          <input type="number" id="phone" name="phone"><br><br>
         </div>
         <div class="box">
           <label for="address">Enter your Address</label>
@@ -114,8 +119,8 @@
         <div class="box">
           <label for="country">Country</label>
           <select name="country" id="country">
-            <option value="nepal">Nepal</option>
-            <option value="foreign">Foreign</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Foreign">Foreign</option>
           </select>
         </div>
         <div class="box">
@@ -183,7 +188,9 @@
       doc.text(20, 110, "Number of Seniors: " + numSeniors);
       doc.text(20, 120, "Number of Differently Abled: " + numAbled);
       doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
-      doc.save("form.pdf");
+      doc.save("Ticket.pdf");
+
+      alert("Your ticket is booked and click [OK] to download tickets");
     };
   
     const numberInputs = document.querySelectorAll('input[type="number"]');
@@ -272,6 +279,8 @@ numberInputs.forEach(input => {
             kg.</li>
           <li>If in a group, the total number of people is 5, then 1 ticket will be free.</li>
           <li>Rates are subject to change without prior notice.</li>
+          <li>For Id proof Nepali citizen should  bring citizenship / passport
+            / national-id / license</li>
         </ul>
       </div>
     </div>

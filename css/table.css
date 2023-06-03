@@ -49,8 +49,8 @@
 .styled-table th,
 .styled-table td {
   font-weight: bold;
-
-  padding: 12px 20px;
+  font-size: 18px;
+  padding: 12px 30px;
   text-align: left;
   border-bottom: 3px solid black;
 }
