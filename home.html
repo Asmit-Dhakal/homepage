@@ -134,23 +134,23 @@
         </div>
         <div class="box">
           <label>Children:</label> <br>
-          <input type="number" id="numChildren" placeholder="0" min="0">
+          <input type="number" id="numChildren" placeholder="0" min="0" value="0">
         </div>
         <div class="box">
           <label>Student:</label> <br>
-          <input type="number" id="numStudents" placeholder="0" min="0">
+          <input type="number" id="numStudents" placeholder="0" min="0"value='0'>
         </div>
         <div class="box">
           <label>Senior Citizen:</label> <br>
-          <input type="number" id="numSeniors" placeholder="0" min="0">
+          <input type="number" id="numSeniors" placeholder="0" min="0" value="0">
         </div>
         <div class="box">
           <label>Differently Abled</label> <br>
-          <input type="number" id="numAbled" placeholder="0" min="0">
+          <input type="number" id="numAbled" placeholder="0" min="0" value="0">
         </div>
         <div class="box">
           <label>Weight of goods per kg</label> <br>
-          <input type="number" id="goodsWeight" placeholder="0" min="0">
+          <input type="number" id="goodsWeight" placeholder="0" min="0" value="0">
         </div>
         <div class="box">
           <div id="button">
@@ -197,7 +197,10 @@
           alert("Mistake on booking: Number of people should be greater than or equal to the sum of children, students, senior citizens, and differently abled people.");
           return;
         }
-    
+        if (numPeople <= 0) {
+        alert("Number of people must be greater than 0.");
+        return;
+      }
         var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
         if (!emailPattern.test(email)) {
           alert("Invalid Gmail address. Please provide a valid Gmail address.");
@@ -232,7 +235,7 @@
           doc.save("Ticket.pdf");
           alert("Downloading your ticket...");
         } else {
-          alert("You can download the ticket later.");
+       
         }
       }
     
