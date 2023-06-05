@@ -158,43 +158,65 @@
         </div>
       </div>
     </div>
-  </div>
+  
 
   <script>
     function downloadPDF() {
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var phone = document.getElementById("phone").value;
-      var address = document.getElementById("address").value;
-      var country = document.getElementById("country").value;
-      var checkin = document.getElementById("checkin").value;
-      var numPeople = document.getElementById("numPeople").value;
-      var numChildren = document.getElementById("numChildren").value;
-      var numStudents = document.getElementById("numStudents").value;
-      var numSeniors = document.getElementById("numSeniors").value;
-      var numAbled = document.getElementById("numAbled").value;
-      var goodsWeight = document.getElementById("goodsWeight").value;
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+  var country = document.getElementById("country").value;
+  var checkin = document.getElementById("checkin").value;
+  var numPeople = document.getElementById("numPeople").value;
+  var numChildren = document.getElementById("numChildren").value;
+  var numStudents = document.getElementById("numStudents").value;
+  var numSeniors = document.getElementById("numSeniors").value;
+  var numAbled = document.getElementById("numAbled").value;
+  var goodsWeight = document.getElementById("goodsWeight").value;
 
-      var doc = new jsPDF();
-      doc.text(20, 20, "Name: " + name);
-      doc.text(20, 30, "Email: " + email);
-      doc.text(20, 40, "Phone: " + phone);
-      doc.text(20, 50, "Address: " + address);
-      doc.text(20, 60, "Country: " + country);
-      doc.text(20, 70, "Check-in: " + checkin);
-      doc.text(20, 80, "Number of People: " + numPeople);
-      doc.text(20, 90, "Number of Children: " + numChildren);
-      doc.text(20, 100, "Number of Students: " + numStudents);
-      doc.text(20, 110, "Number of Seniors: " + numSeniors);
-      doc.text(20, 120, "Number of Differently Abled: " + numAbled);
-      doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
-      doc.save("Ticket.pdf");
+  if (
+    name === "" ||
+    email === "" ||
+    phone === "" ||
+    address === "" ||
+    country === "" ||
+    checkin === "" ||
+    numPeople === "" ||
+    numChildren === "" ||
+    numStudents === "" ||
+    numSeniors === "" ||
+    numAbled === "" ||
+    goodsWeight === ""
+  ) {
+    alert("Please fill in all the fields.");
+    return;
+  }
 
-      alert("Your ticket is booked and click [OK] to download tickets");
-    };
-  
+  var doc = new jsPDF();
+  doc.text(20, 20, "Name: " + name);
+  doc.text(20, 30, "Email: " + email);
+  doc.text(20, 40, "Phone: " + phone);
+  doc.text(20, 50, "Address: " + address);
+  doc.text(20, 60, "Country: " + country);
+  doc.text(20, 70, "Check-in: " + checkin);
+  doc.text(20, 80, "Number of People: " + numPeople);
+  doc.text(20, 90, "Number of Children: " + numChildren);
+  doc.text(20, 100, "Number of Students: " + numStudents);
+  doc.text(20, 110, "Number of Seniors: " + numSeniors);
+  doc.text(20, 120, "Number of Differently Abled: " + numAbled);
+  doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
+
+  var confirmation = confirm("Your ticket is booked. Do you want to download the ticket?");
+  if (confirmation) {
+    doc.save("Ticket.pdf");
+    alert("Downloading your ticket...");
+  } else {
+    alert("You can download the ticket later.");
+  }
+};
+
     const numberInputs = document.querySelectorAll('input[type="number"]');
-
 numberInputs.forEach(input => {
   input.addEventListener('input', () => {
     if (input.value <=0) {
@@ -202,8 +224,8 @@ numberInputs.forEach(input => {
     }
   });
 });
-
   </script>
+  </div>
 
 <!--sumbit button code end  -->
 
