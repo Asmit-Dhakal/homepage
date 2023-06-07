@@ -1,6 +1,6 @@
 
 body{
-  background-color:black;
+  background-color:rgb(10, 2, 2);
   margin: 0; padding: 0;
   }
   body, body::after, body::before
@@ -9,7 +9,7 @@ body{
   }
 
 /* image slide css start */
-.img-animation .container {
+.img-animation .swiper-container{
     width: auto;
     height :auto;
     display:flex;
@@ -21,7 +21,7 @@ body{
 }
 .swiper
 {
-    width: 100%;
+    width: 90%;
     height: fit-content;
 }
 .swiper-slide img{

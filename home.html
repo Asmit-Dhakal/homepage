@@ -11,7 +11,7 @@
   <link href="css/book.css" rel="stylesheet" type="text/css" />
   <link href="css/footer.css" rel="stylesheet" type="text/css" />
   <link href="css/nav.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/script.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  
 </head>
 <body>
   <!--nav bar start-->
@@ -40,61 +41,59 @@
   </nav>
 </div>
 <!--nav bar end -->
+
 <!-- image animation start-->
-<div>
-<div class ="img-animation">
-<div class="container" >
-  <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><img src="images/1.png"></div>
-    <div class="swiper-slide"><img src="images/2.png"></div>
-    <div class="swiper-slide"><img src="images/3.png"></div>
-    <div class="swiper-slide"><img src="images/4.png"></div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+<div class="img-animation">
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="images/1.png" alt=""></div>
+        <div class="swiper-slide"><img src="images/2.png" alt=""></div>
+        <div class="swiper-slide"><img src="images/3.png" alt=""></div>
+        <div class="swiper-slide"><img src="images/4.png" alt=""></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
 
-<script>
-  const swiper = new Swiper('.swiper', {
-  autoplay:{
-    delay:3000,
-    disableOnInteraction:false,
-  },
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script>
+  const mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    autoplay: {
+      delay:2000,
+      disableOnInteraction:false,
+    },
+    loop: true,
+   coverflowEffect: {
+    rotate: 30,
+    slideShadows: true
   },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable:true,
+    },
 
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+   
+   
+  })
 </script>
 </div>
-</div>
+
+
 <!-- image animation end-->
 
 <!--sumbit button code start  -->
@@ -124,9 +123,16 @@
             <option value="Foreign">Foreign</option>
           </select>
         </div>
+          <div class="box">
+            <label>Trip Type:</label>
+            <select name="tripType" id="tripType">
+              <option value="One-Way">One-way</option>
+              <option value="Two-Way">Two-way</option>
+            </select>
+          </div>
         <div class="box">
-          <label>Check-in:</label>
-          <input type="date" id="checkin" placeholder="Check-in Date">
+          <label>Book-Date:</label>
+          <input type="date" id="BookDate" placeholder="Check-in Date">
         </div>
         <div class="box">
           <label>Number of People</label> <br>
@@ -167,7 +173,8 @@
         var phone = document.getElementById("phone").value;
         var address = document.getElementById("address").value;
         var country = document.getElementById("country").value;
-        var checkin = document.getElementById("checkin").value;
+        var tripType = document.getElementById("tripType").value;
+        var checkin = document.getElementById("BookDate").value;
         var numPeople = parseInt(document.getElementById("numPeople").value);
         var numChildren = parseInt(document.getElementById("numChildren").value);
         var numStudents = parseInt(document.getElementById("numStudents").value);
@@ -181,7 +188,7 @@
           phone === "" ||
           address === "" ||
           country === "" ||
-          checkin === "" ||
+          BookDate === "" ||
           numPeople === "" ||
           numChildren === "" ||
           numStudents === "" ||
@@ -197,7 +204,7 @@
           alert("Mistake on booking: Number of people should be greater than or equal to the sum of children, students, senior citizens, and differently abled people.");
           return;
         }
-        if (numPeople <= 0) {
+      if (numPeople <= 0) {
         alert("Number of people must be greater than 0.");
         return;
       }
@@ -208,7 +215,7 @@
         }
     
         var today = new Date();
-        var selectedDate = new Date(checkin);
+        var selectedDate = new Date(BookDate);
     
         // Check if selected date is tomorrow or later
         if (selectedDate <= today) {
@@ -222,7 +229,8 @@
         doc.text(20, 40, "Phone: " + phone);
         doc.text(20, 50, "Address: " + address);
         doc.text(20, 60, "Country: " + country);
-        doc.text(20, 70, "Check-in: " + checkin);
+        doc.text(20, 140, "Trip Type: " + tripType);
+        doc.text(20, 70, "Booked-Date " + checkin);
         doc.text(20, 80, "Number of People: " + numPeople);
         doc.text(20, 90, "Number of Children: " + numChildren);
         doc.text(20, 100, "Number of Students: " + numStudents);
@@ -272,7 +280,6 @@
       window.addEventListener("DOMContentLoaded", setMinDate);
     </script>
     
-   
   </div>
 
 <!--sumbit button code end  -->
