@@ -86,9 +86,6 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-   
-   
   })
 </script>
 </div>
@@ -97,191 +94,204 @@
 <!-- image animation end-->
 
 <!--sumbit button code start  -->
-  <div>
-    <div class="book">
-      <div class="input grid">
+<div>
+  <div class="book">
+    <div class="input grid">
+      <div class="box">
+        <label for="name">Enter your Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+      </div>
+      <div class="box">
+        <label for="email">Enter your Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+      </div>
+      <div class="box">
+        <label for="phone">Enter your Phone no:</label>
+        <input type="number" id="phone" name="phone"><br><br>
+      </div>
+      <div class="box">
+        <label for="address">Enter your Address</label>
+        <input type="text" id="address" name="address"><br><br>
+      </div>
+      <div class="box">
+        <label for="country">Country</label>
+        <select name="country" id="country">
+          <option value="Nepal">Nepal</option>
+          <option value="Foreign">Foreign</option>
+        </select>
+      </div>
         <div class="box">
-          <label for="name">Enter your Name:</label>
-          <input type="text" id="name" name="name"><br><br>
-        </div>
-        <div class="box">
-          <label for="email">Enter your Email:</label>
-          <input type="text" id="email" name="email"><br><br>
-        </div>
-        <div class="box">
-          <label for="phone">Enter your Phone no:</label>
-          <input type="number" id="phone" name="phone"><br><br>
-        </div>
-        <div class="box">
-          <label for="address">Enter your Address</label>
-          <input type="text" id="address" name="address"><br><br>
-        </div>
-        <div class="box">
-          <label for="country">Country</label>
-          <select name="country" id="country">
-            <option value="Nepal">Nepal</option>
-            <option value="Foreign">Foreign</option>
+          <label>Trip Type:</label>
+          <select name="tripType" id="tripType">
+            <option value="One-Way">One-way</option>
+            <option value="Two-Way">Two-way</option>
           </select>
         </div>
-          <div class="box">
-            <label>Trip Type:</label>
-            <select name="tripType" id="tripType">
-              <option value="One-Way">One-way</option>
-              <option value="Two-Way">Two-way</option>
-            </select>
-          </div>
-        <div class="box">
-          <label>Book-Date:</label>
-          <input type="date" id="BookDate" placeholder="Check-in Date">
-        </div>
-        <div class="box">
-          <label>Number of People</label> <br>
-          <input type="number" id="numPeople" placeholder="0" min="0">
-        </div>
-        <div class="box">
-          <label>Children:</label> <br>
-          <input type="number" id="numChildren" placeholder="0" min="0" value="0">
-        </div>
-        <div class="box">
-          <label>Student:</label> <br>
-          <input type="number" id="numStudents" placeholder="0" min="0"value='0'>
-        </div>
-        <div class="box">
-          <label>Senior Citizen:</label> <br>
-          <input type="number" id="numSeniors" placeholder="0" min="0" value="0">
-        </div>
-        <div class="box">
-          <label>Differently Abled</label> <br>
-          <input type="number" id="numAbled" placeholder="0" min="0" value="0">
-        </div>
-        <div class="box">
-          <label>Weight of goods per kg</label> <br>
-          <input type="number" id="goodsWeight" placeholder="0" min="0" value="0">
-        </div>
-        <div class="box">
-          <div id="button">
-            <button onclick="downloadPDF()">Submit</button>
-          </div>
+      <div class="box">
+        <label>Book-Date:</label>
+        <input type="date" id="BookDate" placeholder="Check-in Date">
+      </div>
+      <div class="box">
+        <label>Number of People</label> <br>
+        <input type="number" id="numPeople" placeholder="0" min="0">
+      </div>
+      <div class="box">
+        <label>Children:</label> <br>
+        <input type="number" id="numChildren" placeholder="0" min="0" value="0">
+      </div>
+      <div class="box">
+        <label>Student:</label> <br>
+        <input type="number" id="numStudents" placeholder="0" min="0"value='0'>
+      </div>
+      <div class="box">
+        <label>Senior Citizen:</label> <br>
+        <input type="number" id="numSeniors" placeholder="0" min="0" value="0">
+      </div>
+      <div class="box">
+        <label>Differently Abled</label> <br>
+        <input type="number" id="numAbled" placeholder="0" min="0" value="0">
+      </div>
+      <div class="box">
+        <label>Weight of goods per kg</label> <br>
+        <input type="number" id="goodsWeight" placeholder="0" min="0" value="0">
+      </div>
+      <div class="box">
+        <div id="button">
+          <button onclick="downloadPDF()">Submit</button>
         </div>
       </div>
     </div>
-  
-    <script>
-      function downloadPDF() {
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("phone").value;
-        var address = document.getElementById("address").value;
-        var country = document.getElementById("country").value;
-        var tripType = document.getElementById("tripType").value;
-        var checkin = document.getElementById("BookDate").value;
-        var numPeople = parseInt(document.getElementById("numPeople").value);
-        var numChildren = parseInt(document.getElementById("numChildren").value);
-        var numStudents = parseInt(document.getElementById("numStudents").value);
-        var numSeniors = parseInt(document.getElementById("numSeniors").value);
-        var numAbled = parseInt(document.getElementById("numAbled").value);
-        var goodsWeight = parseFloat(document.getElementById("goodsWeight").value);
-    
-        if (
-          name === "" ||
-          email === "" ||
-          phone === "" ||
-          address === "" ||
-          country === "" ||
-          BookDate === "" ||
-          numPeople === "" ||
-          numChildren === "" ||
-          numStudents === "" ||
-          numSeniors === "" ||
-          numAbled === "" ||
-          goodsWeight === ""
-        ) {
-          alert("Please fill up all the fields.");
-          return;
-        }
-    
-        if (numPeople < numChildren + numStudents + numSeniors + numAbled) {
-          alert("Mistake on booking: Number of people should be greater than or equal to the sum of children, students, senior citizens, and differently abled people.");
-          return;
-        }
-      if (numPeople <= 0) {
-        alert("Number of people must be greater than 0.");
-        return;
-      }
-        var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-        if (!emailPattern.test(email)) {
-          alert("Invalid Gmail address. Please provide a valid Gmail address.");
-          return;
-        }
-    
-        var today = new Date();
-        var selectedDate = new Date(BookDate);
-    
-        // Check if selected date is tomorrow or later
-        if (selectedDate <= today) {
-          alert("Invalid check-in date. Please choose a date starting from tomorrow.");
-          return;
-        }
-    
-        var doc = new jsPDF();
-        doc.text(20, 20, "Name: " + name);
-        doc.text(20, 30, "Email: " + email);
-        doc.text(20, 40, "Phone: " + phone);
-        doc.text(20, 50, "Address: " + address);
-        doc.text(20, 60, "Country: " + country);
-        doc.text(20, 140, "Trip Type: " + tripType);
-        doc.text(20, 70, "Booked-Date " + checkin);
-        doc.text(20, 80, "Number of People: " + numPeople);
-        doc.text(20, 90, "Number of Children: " + numChildren);
-        doc.text(20, 100, "Number of Students: " + numStudents);
-        doc.text(20, 110, "Number of Seniors: " + numSeniors);
-        doc.text(20, 120, "Number of Differently Abled: " + numAbled);
-        doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
-    
-        var confirmation = confirm("Your ticket is booked. Do you want to download the ticket?");
-        if (confirmation) {
-          doc.save("Ticket.pdf");
-          alert("Downloading your ticket...");
-        } else {
-       
-        }
-      }
-    
-      const numberInputs = document.querySelectorAll('input[type="number"]');
-      numberInputs.forEach(input => {
-        input.addEventListener('input', () => {
-          if (input.value <= 0) {
-            input.value = 0;
-          }
-        });
-      });
-    
-      // Disable past dates in the date picker
-      function setMinDate() {
-        var today = new Date();
-        var tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-    
-        var dd = tomorrow.getDate();
-        var mm = tomorrow.getMonth() + 1;
-        var yyyy = tomorrow.getFullYear();
-    
-        if (dd < 10) {
-          dd = "0" + dd;
-        }
-        if (mm < 10) {
-          mm = "0" + mm;
-        }
-    
-        var minDate = yyyy + "-" + mm + "-" + dd;
-        document.getElementById("checkin").setAttribute("min", minDate);
-      }
-    
-      window.addEventListener("DOMContentLoaded", setMinDate);
-    </script>
-    
   </div>
 
+  <script>
+    function downloadPDF() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+      var country = document.getElementById("country").value;
+      var tripType = document.getElementById("tripType").value;
+      var checkin = document.getElementById("BookDate").value;
+      var numPeople = parseInt(document.getElementById("numPeople").value);
+      var numChildren = parseInt(document.getElementById("numChildren").value);
+      var numStudents = parseInt(document.getElementById("numStudents").value);
+      var numSeniors = parseInt(document.getElementById("numSeniors").value);
+      var numAbled = parseInt(document.getElementById("numAbled").value);
+      var goodsWeight = parseFloat(document.getElementById("goodsWeight").value);
+  
+      if (
+        name === "" ||
+        email === "" ||
+        phone === "" ||
+        address === "" ||
+        country === "" ||
+        BookDate === "" ||
+        numPeople === "" ||
+        numChildren === "" ||
+        numStudents === "" ||
+        numSeniors === "" ||
+        numAbled === "" ||
+        goodsWeight === ""
+      ) {
+        alert("Please fill up all the fields.");
+        return;
+      }
+  
+      if (numPeople < numChildren + numStudents + numSeniors + numAbled) {
+        alert("Mistake on booking: Number of people should be greater than or equal to the sum of children, students, senior citizens, and differently abled people.");
+        return;
+      }
+    if (numPeople <= 0) {
+      alert("Number of people must be greater than 0.");
+      return;
+    }
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      if (!emailPattern.test(email)) {
+        alert("Invalid Gmail address. Please provide a valid Gmail address.");
+        return;
+      }
+  
+      var today = new Date();
+      var selectedDate = new Date(checkin);
+  
+      // Check if selected date is tomorrow or later
+      if (selectedDate <= today) {
+        alert("Invalid check-in date. Please choose a date starting from tomorrow.");
+        return;
+      }
+  
+      var doc = new jsPDF();
+      doc.text(20, 20, "Name: " + name);
+      doc.text(20, 30, "Email: " + email);
+      doc.text(20, 40, "Phone: " + phone);
+      doc.text(20, 50, "Address: " + address);
+      doc.text(20, 60, "Country: " + country);
+      doc.text(20, 140, "Trip Type: " + tripType);
+      doc.text(20, 70, "Booked-Date " + checkin);
+      doc.text(20, 80, "Number of People: " + numPeople);
+      doc.text(20, 90, "Number of Children: " + numChildren);
+      doc.text(20, 100, "Number of Students: " + numStudents);
+      doc.text(20, 110, "Number of Seniors: " + numSeniors);
+      doc.text(20, 120, "Number of Differently Abled: " + numAbled);
+      doc.text(20, 130, "Weight of Goods per kg: " + goodsWeight);
+  
+      var confirmation = confirm("Your ticket is booked. Do you want to download the ticket?");
+      if (confirmation) {
+        doc.save("Ticket.pdf");
+        alert("Downloading your ticket...");
+      } else {
+     
+      }
+    }
+  
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    numberInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        if (input.value <= 0) {
+          input.value = 0;
+        }
+      });
+    });
+  
+    // Disable past dates in the date picker
+    function setMinDate() {
+  var today = new Date();
+  today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0
+
+  var tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  var dd = tomorrow.getDate();
+  var mm = tomorrow.getMonth() + 1;
+  var yyyy = tomorrow.getFullYear();
+
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  var minDate = yyyy + "-" + mm + "-" + dd;
+  document.getElementById("BookDate").setAttribute("min", minDate);
+}
+
+function validateSelectedDate() {
+  var selectedDate = document.getElementById("BookDate").value;
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0
+
+  if (new Date(selectedDate) < tomorrow) {
+    alert("Invalid check-in date. Please choose a date starting from tomorrow.");
+    document.getElementById("BookDate").value = "";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", setMinDate);
+  </script>
+  
+</div>
 <!--sumbit button code end  -->
 
 <div class="table-rules">
