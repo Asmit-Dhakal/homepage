@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   
     // Perform login validation (dummy example)
     if (username === "admin" && password === "password") {
-      window.location.href = "home.html";
+      location.href="home.html"
     } else {
       alert("Invalid username or password");
     }
